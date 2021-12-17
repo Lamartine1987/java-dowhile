@@ -10,13 +10,17 @@ public class LoginUsuario {
         String name;
         String pass;
 
-        do{
-            System.out.println("ATENÇÃO! Login e senha precisam ser diferentes!");
+        while(true){
             System.out.println("\nDigite o nome para login: ");
             name = scan_name.next();
             System.out.println("Digite uma senha: ");
             pass = scan_pass.next();
-        }while(Objects.equals(name, pass));
-        System.out.println("\nRegistrado com sucesso!");
+            if(name.equals(pass)){
+                System.out.println("\nNome e login não podem ser iguais!");
+            }else{
+                System.out.println("\nConseguiu.");
+                break;
+            }
+        }
     }
 }
